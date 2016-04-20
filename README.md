@@ -1,6 +1,8 @@
 # oVirt Dashboard UI plugin
 
-[oVirt](http://www.ovirt.org/) [UI plugin](http://www.ovirt.org/develop/release-management/features/ux/uiplugins/) that gives overview of the environment and its specific objects.
+[UI plugin](http://www.ovirt.org/develop/release-management/features/ux/uiplugins/) that gives overview of the virtualized environment and its specific objects.
+
+> **Update (20 Apr 2016):** project moved to [Gerrit](https://gerrit.ovirt.org/#/q/project:ovirt-engine-dashboard), please clone `ovirt-engine-dashboard` from there.
 
 ## Prerequisites
 
@@ -27,15 +29,14 @@ Use `npm run build` to build for production.
 5. symlink plugin files to `ui-plugins` directory as following:
 
 ```
-cd ${PREFIX}/share/ovirt-engine/ui-plugins
-ln -s /path/to/ovirt-dashboard-ui-plugin/dist/dashboard.json dashboard.json
-ln -s /path/to/ovirt-dashboard-ui-plugin/dist/dashboard-resources dashboard-resources
+cd ${PLUGIN_HOME}/dist/
+ln -s dashboard.json dashboard-resources ${PREFIX}/share/ovirt-engine/ui-plugins/
 ```
 
-## Access plugin via oVirt UI
+## Accessing plugin
 
 Open WebAdmin in your browser, you should land on **Dashboard** main tab automatically:
 
 ```
-https://engine:8443/ovirt-engine/webadmin/WebAdmin.html
+https://engine.example:8443/ovirt-engine/webadmin/WebAdmin.html
 ```
